@@ -11,21 +11,20 @@ const SignupPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post('http://localhost:5000/signup', {
         name,
         email,
         password,
       });
-
-      alert('Signup successful');
+  
+      alert('Signup successfull');
       navigate('/login'); // Redirect to login page after successful signup
     } catch (err) {
       setError(err.response?.data || 'Something went wrong');
     }
   };
-
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Sign Up</h2>
